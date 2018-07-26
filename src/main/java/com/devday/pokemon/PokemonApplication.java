@@ -24,6 +24,7 @@ public class PokemonApplication {
         SpringApplication.run(PokemonApplication.class, args);
     }
 
+    /*
     @Bean
     public RestTemplate restTemplate(RestTemplateBuilder builder) {
         return builder.build();
@@ -32,14 +33,14 @@ public class PokemonApplication {
     @Bean
     public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
         return args -> {
-            String url ="http://pokeapi.salestock.net/api/v2/type/3";
+            String url = "http://pokeapi.salestock.net/api/v2/type/3";
 
             RestTemplateBuilder builder = new RestTemplateBuilder();
             RestTemplate template = builder.build();
             HttpHeaders headers = new HttpHeaders();
             headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
-    		headers.setContentType(MediaType.APPLICATION_JSON);
-    		headers.set("User-Agent", "curl/7.49.0");
+            headers.setContentType(MediaType.APPLICATION_JSON);
+            headers.set("User-Agent", "curl/7.49.0");
 
             HttpEntity<String> entity = new HttpEntity<String>(headers);
 
@@ -47,12 +48,13 @@ public class PokemonApplication {
 
             List<String> pokemonNames = new ArrayList<String>();
 
-            for (int i=0; i<pokemonResponse.getBody().getPokemon().length ; i++) {
+            for (int i = 0; i < pokemonResponse.getBody().getPokemon().length; i++) {
                 pokemonNames.add(pokemonResponse.getBody().getPokemon()[i].getPokemon().getName());
             }
 
             System.out.println(pokemonNames);
         };
     }
+    */
 
 }

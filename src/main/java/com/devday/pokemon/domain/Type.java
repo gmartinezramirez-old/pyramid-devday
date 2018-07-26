@@ -5,22 +5,19 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Pokemon {
+public class Type {
 
     @Id
     @GeneratedValue
     private int id;
 
-    private String url;
-
     private String name;
 
-    public Pokemon() {
+    public Type() {
     }
 
-    public Pokemon(int id, String url, String name) {
+    public Type(int id, String name) {
         this.id = id;
-        this.url = url;
         this.name = name;
     }
 
@@ -30,14 +27,6 @@ public class Pokemon {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.name = url;
     }
 
     public String getName() {
